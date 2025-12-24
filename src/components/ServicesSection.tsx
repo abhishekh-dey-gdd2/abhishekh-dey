@@ -182,7 +182,7 @@ const ServicesSection = () => {
         </motion.div>
 
         {/* Pricing Grid */}
-        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto pt-6">
           {pricingTiers.map((tier, index) => (
             <motion.div
               key={tier.name}
@@ -194,7 +194,7 @@ const ServicesSection = () => {
               }`}
             >
               {tier.popular && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-primary text-primary-foreground text-xs font-bold">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-primary text-primary-foreground text-xs font-bold z-10 shadow-lg">
                   Most Popular
                 </div>
               )}

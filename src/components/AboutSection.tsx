@@ -56,8 +56,49 @@ const AboutSection = () => {
             className="relative"
           >
             <div className="relative">
+              {/* Decorative Corner Borders */}
+              <div className="absolute -inset-2 z-0 opacity-50">
+                {/* Top Left Corner */}
+                <div className="absolute top-0 left-0 w-16 h-16">
+                  <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-primary to-transparent"></div>
+                  <div className="absolute top-0 left-0 w-0.5 h-full bg-gradient-to-b from-primary to-transparent"></div>
+                </div>
+                {/* Top Right Corner */}
+                <div className="absolute top-0 right-0 w-16 h-16">
+                  <div className="absolute top-0 right-0 w-full h-0.5 bg-gradient-to-l from-secondary to-transparent"></div>
+                  <div className="absolute top-0 right-0 w-0.5 h-full bg-gradient-to-b from-secondary to-transparent"></div>
+                </div>
+                {/* Bottom Left Corner */}
+                <div className="absolute bottom-0 left-0 w-16 h-16">
+                  <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-secondary to-transparent"></div>
+                  <div className="absolute bottom-0 left-0 w-0.5 h-full bg-gradient-to-t from-secondary to-transparent"></div>
+                </div>
+                {/* Bottom Right Corner */}
+                <div className="absolute bottom-0 right-0 w-16 h-16">
+                  <div className="absolute bottom-0 right-0 w-full h-0.5 bg-gradient-to-l from-primary to-transparent"></div>
+                  <div className="absolute bottom-0 right-0 w-0.5 h-full bg-gradient-to-t from-primary to-transparent"></div>
+                </div>
+              </div>
+
+              {/* Animated Glow Border */}
+              <motion.div
+                className="absolute -inset-1 rounded-2xl z-0"
+                style={{
+                  background: 'linear-gradient(135deg, hsla(185, 100%, 50%, 0.3) 0%, hsla(270, 80%, 60%, 0.3) 100%)',
+                  filter: 'blur(8px)',
+                }}
+                animate={{
+                  opacity: [0.3, 0.6, 0.3],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: 'easeInOut',
+                }}
+              />
+
               {/* Main Image */}
-              <div className="relative z-10 rounded-2xl overflow-hidden border border-border/50 glass-card">
+              <div className="relative z-10 rounded-2xl overflow-hidden border border-primary/30 glass-card shadow-[0_0_30px_rgba(0,229,255,0.2)]">
                 <img
                   src={profilePlaceholder}
                   alt="Abhishekh Dey"
@@ -65,14 +106,14 @@ const AboutSection = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
               </div>
-              
-              
+
+
               {/* Experience Badge */}
               <motion.div
                 initial={{ scale: 0 }}
                 animate={isInView ? { scale: 1 } : {}}
                 transition={{ duration: 0.5, delay: 0.6, type: 'spring' }}
-                className="absolute -right-6 top-1/4 glass-card p-4 rounded-xl border border-primary/30"
+                className="absolute -right-6 top-1/4 glass-card p-4 rounded-xl border border-primary/30 shadow-[0_0_20px_rgba(0,229,255,0.3)]"
               >
                 <div className="text-3xl font-bold text-gradient">3+</div>
                 <div className="text-xs text-muted-foreground">Years of<br />Experience</div>
